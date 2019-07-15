@@ -1,0 +1,20 @@
+body {
+  padding: 50px;
+  background-color: green;
+  font-family: sans-serif;
+
+}
+
+
+
+.container{
+  display:flex;
+  justify-content: flex;
+}
+
+button{
+  margin-left: 10px;
+}
+input{
+  margin-left: 10px;
+}
