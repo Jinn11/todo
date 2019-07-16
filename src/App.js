@@ -19,14 +19,34 @@ addItem=event=>{
 
   render(){
     return(
-      <div className='container'>
+<div className='container'>
+        
+      <label htmlFor="hhh">Task:</label>
+      <input onChange={this.handleChange} name="" type="teccc" placeholder=""/>
       <form onSubmit ={this.addItem}>
-      <label htmlFor="hhh">Type:</label>
-      <input onChange={this.handleChange} name="" type="teccc" 
-      placeholder=""/>
-      <button type ="submit">ok</button>
-      </form>
-      </div>   
+<div className='container'>
+      <label htmlFor="hhh">One:</label>
+      <input onChange={this.handleChange} name="" type="teccc" placeholder=""/>
+      <button type ="submit">OK</button>
+</div>
+      <label htmlFor="hhh">Two:</label>
+      <input onChange={this.handleChange} name="" type="teccc" placeholder=""/>
+      <button type ="submit">OK</button>
+
+   <div className='container'>  
+      <label htmlFor="hhh">Three:</label>
+      <input onChange={this.handleChange} name="" type="teccc" placeholder=""/>
+      <button type ="submit">OK</button>
+   </div>  
+
+<div className='container'>
+  
+      <label htmlFor="hhh">Four:</label>
+      <input onChange={this.handleChange} name="" type="teccc" placeholder=""/>
+      <button type ="submit">OK</button>
+ </div>     
+    </form>
+</div>
      )
 }
 }
