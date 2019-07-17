@@ -1,55 +1,50 @@
 import React, { Component } from 'react';
-
-class TodoList extends Component{
+import TaskList from './TaskList'
+class Todo extends Component{
 
 constructor(){
   super();
   this.state={
-    todos:[],
+    todo:[],
     CurrentToDo:"",
   }
 }
 
 handleChange=event=>{
- return event.target.value
+ //console.log( event.target.value)
+ this.setState({
+   CurrentToDo:event.target.value,
+ })//we want to set the currentToDo on state to the event.target.value & placing curentTOdo
 }
-addItem=event=>{
+addItem=(event)=>{
   event.preventDefault();
+  //we want to add the this.state.CurrentToDo value to the todos array;
+if(this.state.CurrentToDo !==  ""){
+  this.setState(
+   { todo: [...this.state.todo, this.state.CurrentToDo], CurrentToDo:""}
+  )
+}
 }
 
-  render(){
-    return(
-<div className='container'>
-        
-      <label htmlFor="hhh">Task:</label>
-      <input onChange={this.handleChange} name="" type="teccc" placeholder=""/>
-      <form onSubmit ={this.addItem}>
-<div className='container'>
-      <label htmlFor="hhh">One:</label>
-      <input onChange={this.handleChange} name="" type="teccc" placeholder=""/>
-      <button type ="submit">OK</button>
-</div>
-      <label htmlFor="hhh">Two:</label>
-      <input onChange={this.handleChange} name="" type="teccc" placeholder=""/>
-      <button type ="submit">OK</button>
+deleteT =(index,event)=>{
+const result = this.state.todo.filter((todo,index)=> index != event.target.id)
+this.setState({
+  todo:result
+});
+}
 
-   <div className='container'>  
-      <label htmlFor="hhh">Three:</label>
-      <input onChange={this.handleChange} name="" type="teccc" placeholder=""/>
-      <button type ="submit">OK</button>
-   </div>  
-
-<div className='container'>
-  
-      <label htmlFor="hhh">Four:</label>
-      <input onChange={this.handleChange} name="" type="teccc" placeholder=""/>
-      <button type ="submit">OK</button>
- </div>     
+  gitrender(){
+    <div>
+    return (
+      <form onSubmit ={this.addItem}>  
+      <label htmlFor="T">TASK_NAME:</label>
+      <input onChange={this.handleChange} name="T" type="teccc" placeholder=""/>
+      <button type ="Submit">OK</button>
     </form>
-</div>
-     )
-}
+    <TaskList todoArray ={this.state.todo} deleteT={this.deleteT}/>
+    </div>
+    )
+  }
 }
 
-
-export default TodoList;
+export default Todo;
