@@ -27,22 +27,22 @@ if(this.state.CurrentToDo !==  ""){
 }
 
 deleteT =(index,event)=>{
-const result = this.state.todo.filter((todo,index)=> index != event.target.id)
+const result = this.state.todo.filter((todo,index) => index != event.target.id)
 this.setState({
   todo:result
 });
 }
 
-  gitrender(){
-    <div>
+  render(){
+  
     return (
+      <div>
       <form onSubmit ={this.addItem}>  
       <label htmlFor="T">TASK_NAME:</label>
       <input onChange={this.handleChange} name="T" type="teccc" placeholder=""/>
       <button type ="Submit">OK</button>
     </form>
-    <TaskList todoArray ={this.state.todo} deleteT={this.deleteT}/>
-    </div>
+    <TaskList todoArray ={this.state.todo} deleteT={this.deleteT}/></div>
     )
   }
 }
