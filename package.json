@@ -1,6 +1,6 @@
 {
-  "homepage":"https://Jinn11.github.io/todo"
-  "name": "todo",
+  "homepage":"https://Jinn11.github.io/todo",
+  "name" : "todo",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -10,7 +10,7 @@
   },
   "scripts": {
       "predeploy": "npm run build",
-      "deploy": "gh-pages -d build",
+      "deploy": "gh-pages -d master build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
